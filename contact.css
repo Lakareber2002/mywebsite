@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: wheat;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Side Navbar */
+.side-navbar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    background-color: black;
+    color: wheat;
+    box-shadow: 2px 0 5px rgba(136, 135, 135, 0.1);
+  }
+  
+  .side-navbar img {
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .side-navbar h2 {
+    color: wheat;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .side-navbar a {
+    color: wheat;
+    padding: 15px 0;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .side-navbar a:hover {
+    background-color: wheat;
+    color: black;
+    border-radius: 5px;
+  }
+
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: black;
+}
+
+/* Add custom styles if needed */
+.error {
+    color: red;
+    margin-top: 5px;
+}
+
+.map-container iframe {
+    border: 0;
+    border-radius: 8px;
+}
+
+ul {
+    font-size: 1.1rem;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}

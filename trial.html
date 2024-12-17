@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Effect</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-image: url('download (2).jpeg'); 
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      height: 100vh;
+      color: white;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+      backdrop-filter: blur(5px);
+      z-index: 1;
+    }
+
+    .typing-line {
+      font-size: 2em;
+      margin: 10px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+      display: inline-block;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div id="line1" class="typing-line"></div>
+    <div id="line2" class="typing-line"></div>
+    <div id="line3" class="typing-line"></div>
+    <div id="line4" class="typing-line"></div>
+  </div>
+
+  <script>
+    // Lines of text
+    const lines = [
+      "Welcome to My Portfolio",
+      "Explore My Projects",
+      "Learn About My Skills",
+      "Connect and Collaborate"
+    ];
+
+    // Typing configuration
+    const typingSpeed = 100; // milliseconds per character
+    const lineDelays = [0, 2000, 4000, 6000]; // Start typing each line at different intervals (ms)
+
+    function typeLine(lineElement, text, delay) {
+      setTimeout(() => {
+        let index = 0;
+        const interval = setInterval(() => {
+          if (index < text.length) {
+            lineElement.textContent += text.charAt(index);
+            index++;
+          } else {
+            clearInterval(interval);
+          }
+        }, typingSpeed);
+      }, delay);
+    }
+
+    // Get line elements
+    const lineElements = [
+      document.getElementById('line1'),
+      document.getElementById('line2'),
+      document.getElementById('line3'),
+      document.getElementById('line4')
+    ];
+
+    // Start typing each line
+    lines.forEach((text, i) => {
+      typeLine(lineElements[i], text, lineDelays[i]);
+    });
+  </script>
+</body>
+</html>
